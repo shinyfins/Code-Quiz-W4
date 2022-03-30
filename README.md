@@ -7,3 +7,5 @@ With this project we will create a Code quiz testing what we know while applying
 This quiz will consist of a timer countdown clock, a penalty system for any and all wrong answers and a score tracker of our performance.
 <br>
 If ive got time ill glam it up and put my own flair on it.
+
+![alt text](assets/codeq.png)
