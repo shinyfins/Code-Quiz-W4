@@ -8,4 +8,7 @@ This quiz will consist of a timer countdown clock, a penalty system for any and 
 <br>
 If ive got time ill glam it up and put my own flair on it.
 
+https://shinyfins.github.io/Code-Quiz-W4/
+
+
 ![alt text](assets/codeq.png)
