@@ -18,7 +18,7 @@
 <!--Header-->
 
 <header>
-    <h1>Coding Quiz</h1>
+    <h1 class="hover" id="homePage">Coding Quiz</h1>
 
 <!--HIGHSCORES-->
     <a href="HighScores.html">🌟 Highscores 🌟</a>
@@ -30,19 +30,27 @@
 
 <main class="quiz-content">
 
+    <!--timer-->
+<div class="time-container">
+    <p id="timer" class="time-count">Time:</p><p id="current-time">0</p>
+</div>
+
 <!--Quiz Q's-->
 <div id="questions-div" style="display:none;">
     <h2 class="text-style" id="questions-display"> Hello world </h2>
     <div class="options" id="questionOptions"> 
         <!--answers go here-->
 
-<div>
+<div class="text-center"t>
     <button id="btn0" class="quizBtn"></button>
     <button id="btn1" class="quizBtn"></button>
     <button id="btn2" class="quizBtn"></button>
     <button id="btn3" class="quizBtn"></button>
 </div>
-<div id="check-div">
+
+<!--check if answers are correct-->
+
+<div id="check-div" class="text-style">
     <p id="check" style="display:none;"></p>
 </div>
 
@@ -53,17 +61,27 @@
 
  <div id="intro"> 
 
-        <p>Take this code quiz to improve your coding knowledge! 👾
+        <p class="intro">Take this code quiz to improve your coding knowledge! 👾
             <br>
             You will be penalized for every wrong answer.
         </p>
 
     </div>
 
-    <button class="btn" id="start">Start Quiz! 🦫</button>
+    <div>
+        <button class="quizBtn" id="start">Start Quiz! 🦫</button>
+    </div>
 
     <!--INTRO SEC END-->
 
+    <!--end game text/restart-->
+    <div class="standard-container">
+        <p class="scores" style = "display:none;" id="score-display"> Your Score is:<p class="score-number" id="time-score"></p></p>
+    </div>
+
+    <div class="standard-container">
+        <button class="quizBtn" style="display:none;" id="restartBtn" >Reset?</button>
+    </div>
 </main>
 
 

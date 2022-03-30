@@ -34,12 +34,19 @@ var questions = [
     },
 
 ];
-
+var homePage = document.getElementById("homePage");
 var questionDiv = document.getElementById("questions-div");
 var questionsDisplay = document.getElementById("questions-display");
 var startBtn = document.getElementById("start");
 var intro = document.getElementById("intro");
 var checker = document.getElementById("check");
+var timer = document.getElementById("timer");
+var currentTime = document.getElementById("current-time");
+var scoreDisplay = document.getElementById("score-display");
+var timeScore = document.getElementById("time-score");
+var restartBtn = document.getElementById("restartBtn");
+var timeLeft = 60;
+var score = 0;
 
 //button variables
 var answer0 = document.getElementById("btn0");
@@ -50,9 +57,12 @@ var answer3 = document.getElementById("btn3");
 
 //event listeners
 answer0.addEventListener("click", chose0);
-answer0.addEventListener("click", chose1);
-answer0.addEventListener("click", chose2);
-answer0.addEventListener("click", chose3);
+answer1.addEventListener("click", chose1);
+answer2.addEventListener("click", chose2);
+answer3.addEventListener("click", chose3);
+
+homePage.addEventListener("click", resetQuiz);
+restartBtn.addEventListener("click", resetQuiz);
 
 
 startBtn.addEventListener("click", startQ);
@@ -63,24 +73,85 @@ function startQ() {
     intro.style.display = "none";
     startBtn.style.display = "none";
     questionDiv.style.display = "block";
+
+    timer.style.display = "block";
+    currentTime.style.display = "block";
+    timeLeft = 59;
+    currentTime.textContent = timeLeft
+    var beginTimer = setInterval(function(){
+        timeLeft--;
+        currentTime.textContent = timeLeft;
+        if (timeLeft <= 0){
+            clearInterval(beginTimer);
+            if(questionIndex < questions.length - 1){
+                endQuiz();
+            }
+        }
+    },1000);
+
+   addQuestions();
 }
 
 
 //display questions
 function addQuestions() {
     questionsDisplay.textContent = questions[questionIndex].title;
-
+    answer0.textContent = questions[questionIndex].choices[0];
+    answer1.textContent = questions[questionIndex].choices[1];
+    answer2.textContent = questions[questionIndex].choices[2];
+    answer3.textContent = questions[questionIndex].choices[3];
 }
 
-//answers functions
 
-function chose0() {answerChecker(0);}
-function chose1() {answerChecker(1);}
-function chose2() {answerChecker(2);}
-function chose3() {answerChecker(3);}
 
 
 function answerChecker(answer) {
     checker.style.display ="block";
   
+    if (questions[questionIndex].answer === questions[questionIndex].choices[answer]) {
+        checker.textContent = "That's right!! 😇"
+    } else {
+        checker.textContent = "That's WRONG!! 😡"
+        timeLeft -= 10;
+        currentTime.textContent = timeLeft;
+    }
+
+    questionIndex++;
+
+    if (questionIndex < questions.length) {
+         addQuestions();
+    } else {
+        endQuiz();
+    }
+}
+
+//answers functions
+
+function chose0() { answerChecker(0); }
+function chose1() { answerChecker(1); }
+function chose2() { answerChecker(2); }
+function chose3() { answerChecker(3); }
+
+function endQuiz() {
+    checker.style.display ="none";
+    questionDiv.style.display = "none";
+    timer.style.display = "none";
+    currentTime.style.display = "none";
+
+    restartBtn.style.display = "block";
+    scoreDisplay.style.display = "block";
+    timeScore.textContent = timeLeft;
+}
+
+//restart quiz
+
+function resetQuiz () {
+    restartBtn.style.display = "none";
+    scoreDisplay.style.display = "none";
+    questionDiv.style.display = "none";
+    checker.style.display = "none";
+
+    intro.style.display = "block";
+    startBtn.style.display = "block";
+    timeScore.textContent = "";
 }

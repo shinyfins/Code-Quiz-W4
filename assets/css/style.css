@@ -28,6 +28,9 @@
     background: var(--secondary);
     padding: 30px 25px;
     border-bottom: 5px solid var(--primary);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   header a {
@@ -45,10 +48,24 @@
     font-size: 40px;
   }
 
+.hover {
+  cursor: pointer;
+}
+
+.standard-container {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.intro {
+  font-size: 25px;
+  text-align: center;
+}
 
 
 
-  .btn {
+  .quizBtn {
     outline: none;
     border: none;
     display: inline-block;
@@ -57,13 +74,18 @@
     font-size: 25px;
     border-radius: 200px;
     position: relative;
-    top: 55px;
+    top: -3px;
     box-shadow: 0 3px var(--secondary);
   }
 
-  .btn:hover {
+  .quizBtn:hover {
     box-shadow: 0 3px var(--red);
-    top: 53px;
+    top: -2px;
+  }
+
+  .text-style {
+    text-align: center;
+    font-size: 25px;
   }
 
   .quiz-content {
@@ -72,3 +94,9 @@
     text-align: center;
   }
  
+  .time-container {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--primary);
+  }
