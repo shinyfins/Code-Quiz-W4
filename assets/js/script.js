@@ -39,12 +39,48 @@ var questionDiv = document.getElementById("questions-div");
 var questionsDisplay = document.getElementById("questions-display");
 var startBtn = document.getElementById("start");
 var intro = document.getElementById("intro");
+var checker = document.getElementById("check");
+
+//button variables
+var answer0 = document.getElementById("btn0");
+var answer1 = document.getElementById("btn1");
+var answer2 = document.getElementById("btn2");
+var answer3 = document.getElementById("btn3");
 
 
 //event listeners
+answer0.addEventListener("click", chose0);
+answer0.addEventListener("click", chose1);
+answer0.addEventListener("click", chose2);
+answer0.addEventListener("click", chose3);
+
+
 startBtn.addEventListener("click", startQ);
 
 function startQ() {
+
+    questionIndex = 0;
     intro.style.display = "none";
     startBtn.style.display = "none";
+    questionDiv.style.display = "block";
+}
+
+
+//display questions
+function addQuestions() {
+    questionsDisplay.textContent = questions[questionIndex].title;
+
+}
+
+//answers functions
+
+function chose0() {answerChecker(0);}
+function chose1() {answerChecker(1);}
+function chose2() {answerChecker(2);}
+function chose3() {answerChecker(3);}
+
+
+function answerChecker(answer) {
+    checker.style.display ="block";
+  
 }
