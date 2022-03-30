@@ -1,3 +1,6 @@
+
+//Array of questions to be tied into the function
+
 var questions = [
     {
         title: "When are curly brakcets used?",
@@ -32,25 +35,16 @@ var questions = [
 
 ];
 
+var questionDiv = document.getElementById("questions-div");
+var questionsDisplay = document.getElementById("questions-display");
+var startBtn = document.getElementById("start");
+var intro = document.getElementById("intro");
 
 
+//event listeners
+startBtn.addEventListener("click", startQ);
 
-
-start.addEventListener("click", goGame );
-
-function goGame() {
-
+function startQ() {
+    intro.style.display = "none";
+    startBtn.style.display = "none";
 }
-
-/*
-6 How do you call a function in java?
-
-funtction with parantheses? function with !? function with %? function with a bullseye?
-
-
-
-GOALS FOR WORK 
-
-When i press start a question with multi button options appears
-when i press a button it goes to the next question
-once all q's are over the game ends

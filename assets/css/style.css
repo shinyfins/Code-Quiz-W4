@@ -23,6 +23,7 @@
 
   }
 
+
   header {
     background: var(--secondary);
     padding: 30px 25px;
@@ -44,14 +45,7 @@
     font-size: 40px;
   }
 
-  footer {
-    width: 100%;
-    background: var(--secondary);
-    color: var(--tertiary);
-    font-size: 25px;
-    padding: 20px;
-    border-top: 5px solid var(--primary);
-  }
+
 
 
   .btn {
@@ -63,12 +57,18 @@
     font-size: 25px;
     border-radius: 200px;
     position: relative;
-    top: -3px;
+    top: 55px;
     box-shadow: 0 3px var(--secondary);
   }
 
   .btn:hover {
     box-shadow: 0 3px var(--red);
-    top: -2px;
+    top: 53px;
+  }
+
+  .quiz-content {
+    font-size: 20px;
+    padding: 0 0 20px;
+    text-align: center;
   }
  
